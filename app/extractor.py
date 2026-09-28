@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 from ebooklib import epub, ITEM_DOCUMENT
 
 from .config import DATABASE_PATH
+from .fulltext import ensure_fulltext_triggers
 
 # Evita crash della console Windows con caratteri Unicode non rappresentabili.
 if hasattr(sys.stdout, "reconfigure"):
@@ -642,6 +643,7 @@ def run(limit: int = 20, chunk_size: int = 6000, overlap: int = 800):
 
     db_path = Path(DATABASE_PATH)
     conn = sqlite3.connect(str(db_path))
+    ensure_fulltext_triggers(conn)
 
     # Un record per libro: la JOIN evita di moltiplicare i libri in presenza
     # di più formati e considera solo il formato prioritario.
