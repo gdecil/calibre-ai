@@ -1,0 +1,56 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local databases, indexes, logs, and runtime data
+/data/
+/logs/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+
+# Local models and caches
+/models/
+/model/
+.cache/
+hf_cache/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.model
+*.f16
+*.f32
+*.vec
+*.vectors
+
+# Personal library files and extracted text/dumps
+*.epub
+*.mobi
+*.azw
+*.azw3
+*.pdf
+*.cbz
+*.cbr
+*.djvu
+*.opf
+*.txt
+!requirements*.txt
+
+# Local scratch scripts and historical copies
+/check_db.py
+/check_failed.py
+/inspect_calibre.py
+*backup*
+* - Copia.py
+*Old.py
